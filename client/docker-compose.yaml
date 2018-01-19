@@ -1,0 +1,10 @@
+version: '2'
+services:
+  demo-client:
+    image: "solinx.co/market/demo-client:0.1"
+    environment:
+      TEST: test
+    command:
+      sh -c "sysctl -p && client -serverAddr=172.16.187.228:28009 -total=35000"
+    restart: always
+    privileged: true
